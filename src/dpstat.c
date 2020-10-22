@@ -2,7 +2,7 @@
 //
 // initial version - based on message_handler()  rjc 2013.1.7
 
-#include "../d-plane/dplane.h"
+#include "dplane.h"
 #define MAXMESS 5000 // must be >= longest message (bytes)
 
 int main(int argc, char **argv)

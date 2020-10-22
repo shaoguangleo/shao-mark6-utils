@@ -5,7 +5,7 @@
 //  write to scattered disks             2013.4.9    rjc
 //  handle subpool version of scat_write 2014.6.3    rjc
 
-#include "../d-plane/dplane.h"
+#include "dplane.h"
 
 #define LBUFF 10240000
 #define MAXBLK 50000

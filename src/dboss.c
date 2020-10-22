@@ -2,7 +2,7 @@
 //
 // created                                 rjc 2012.8.3
 
-#include "../d-plane/dplane.h"
+#include "dplane.h"
 
 int main(int argc, char **argv)
 {

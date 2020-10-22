@@ -4,7 +4,7 @@
 // support version 2 block format   2013.4.24  rjc
 // add de-threading feature         2013.9.27  rjc
 
-#include "../d-plane/dplane.h"
+#include "dplane.h"
 
 #define TWO31_1 2147483647
 #define BMAX 100000

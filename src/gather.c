@@ -5,7 +5,7 @@
 // support for v.2 input format      2013.4.22   rjc
 // add -o field to prevent accidents 2014.12.19  rjc
 
-#include "../d-plane/dplane.h"
+#include "dplane.h"
 #include <aio.h>
 
 #define MAXFILES 32       // maximum number of input files
@@ -50,19 +50,16 @@ int main(int argc, char **argv)
         fhd_length[4] = {0, 20, 20, 0},
         sync_word,
         version,
-        pkt_size,
-        blk_size,
+        pkt_size, /// Package size, 8032 for example
+        blk_size, /// Block size, 10MB by default
         pkt_per_blk,
         lbhead; // length of the block header (bytes)
 
     unsigned int *pint;
 
-    u_char *ibuf[MAXFILES + 1][RB_CELLS],
-        *pbuf;
+    u_char *ibuf[MAXFILES + 1][RB_CELLS], *pbuf;
 
-    long int rb_size,
-        nibytes[MAXFILES],
-        nobytes;
+    long int rb_size, nibytes[MAXFILES], nobytes;
 
     double elapsed;
 
@@ -74,11 +71,10 @@ int main(int argc, char **argv)
 
     struct output_queue *oq_ptr;
 
-    struct aiocb aiocbi[MAXFILES],
-        aiocbo;
+    struct aiocb aiocbi[MAXFILES], aiocbo;
 
-    struct timeval tv0,
-        tv;
+    struct timeval tv0, tv;
+
     struct timezone tz;
 
     struct wb_header_tag *phead;
@@ -132,8 +128,7 @@ int main(int argc, char **argv)
     pbuf = (u_char *)malloc(rb_size);
     if (pbuf == NULL)
     {
-        printf("Error allocating input file ring buffer memory of %ld bytes\n",
-               rb_size);
+        printf("Error allocating input file ring buffer memory of %ld bytes\n", rb_size);
         exit(-1);
     }
     // point to each of the write block frames
