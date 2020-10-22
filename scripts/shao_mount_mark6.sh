@@ -13,7 +13,7 @@ set -o nounset                                  # Treat unset variables as an er
 
 # get all the disks
 
-aa=`lsscsi| grep -v cd | grep -v sda| awk '{print $6}' `
+aa=`lsscsi| grep -v cd | grep -v -w sda| awk '{print $6}' `
 
 echo "There are disks in the following:"
 echo $aa
@@ -24,17 +24,18 @@ do
     let "index+=1"
 done
 
-echo 'There are total $index disks'
+let module_no=index/8
+
+echo 'There are total ' $index ' disks, '${module_no} 'module(s) in total'
 
 echo 'Begin mounting...'
 
-for ((module=1;module<=2;module++))
+for ((module=1;module<=${module_no};module++))
 do
     for ((disk=0;disk<=7;disk++))
     do
-        echo 'mount' $module'/'$disk
         let no=(module-1)*8+disk+1
-        echo $no
+        echo $no ': mount' $module'/'$disk
         echo 'mounting ' ${arr[$no]}'1' ' => /mnt/disks/'$module/$disk
         mount ${arr[$no]}1 /mnt/disks/$module/$disk
         echo 'mounting ' ${arr[$no]}'2' ' => /mnt/disks/.meta/'$module/$disk
