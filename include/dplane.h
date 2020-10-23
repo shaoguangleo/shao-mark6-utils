@@ -32,6 +32,7 @@
 #include <sys/types.h>
 #include <time.h>
 #include <unistd.h>
+#include <pthread.h>
 
 #include "messages.h"
 #include "mk5b.h"
