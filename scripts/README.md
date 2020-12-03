@@ -53,3 +53,11 @@ For example:
          shao_mark6_dethread_files  /home/data/     : will dethread all the data in /home/data/
          shao_mark6_dethread_files  /home/data/ abc : will dethread data in /home/data include abc
 ```
+
+## Mount the Mark6 manually
+
+It happeds a lot that we can not mount disks on Mark6, if we just want to playback the data, using the following command to mount manually
+
+```bash
+$ sudo shao_mark6_mount
+```
