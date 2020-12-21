@@ -18,4 +18,4 @@ $ cmake .. & make & make install
 
 - M6Utils : 1.0.7
 - d-plane : 1.17
-- scripts : 1.4.1
+- scripts : 1.4.2
