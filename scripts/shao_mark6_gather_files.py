@@ -35,6 +35,10 @@ def usage():
 
 
 def get_all_files():
+    data_module_1_have = False 
+    data_module_2_have = False 
+    data_module_3_have = False 
+    data_module_4_have = False 
     if '1' in sys.argv[2]:
         data_module_1_have = True
     if '2' in sys.argv[2]:
