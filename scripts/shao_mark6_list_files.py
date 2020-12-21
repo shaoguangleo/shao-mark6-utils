@@ -3,6 +3,7 @@
 import os
 import sys
 
+# See shao_mark6_version.py for more details
 _name_ = ' shao_mark6_list_files '
 _author_ = ' Guo Shaoguang<sgguo@shao.ac.cn> '
 _version_ = 'v1.4'
