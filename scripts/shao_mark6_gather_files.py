@@ -38,11 +38,11 @@ def get_all_files():
     if '1' in sys.argv[2]:
         data_module_1_have = True
     if '2' in sys.argv[2]:
-        data_module_1_have = True
+        data_module_2_have = True
     if '3' in sys.argv[2]:
-        data_module_1_have = True
+        data_module_3_have = True
     if '4' in sys.argv[2]:
-        data_module_1_have = True
+        data_module_4_have = True
 
     # Here to list all the files
     if data_module_1_have:
