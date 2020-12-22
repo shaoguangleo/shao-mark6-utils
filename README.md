@@ -2,6 +2,16 @@
 
 Mark6 utils used by SHAO
 
+## Prerequisites
+
+You should install aio for asynchronous I/O access library, type the following command.
+
+On CentOS
+
+```bash
+$ sudo yum install libaio libaio-devel
+```
+
 ## Installation
 
 Just type the following command to install all the utils
