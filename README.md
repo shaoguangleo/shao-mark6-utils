@@ -11,6 +11,11 @@ On CentOS
 ```bash
 $ sudo yum install libaio libaio-devel
 ```
+On Ubuntu
+```bash
+$ sudo apt-cache search aio
+$ sudo apt-get install libaio1 libaio-dev
+```
 
 ## Installation
 
