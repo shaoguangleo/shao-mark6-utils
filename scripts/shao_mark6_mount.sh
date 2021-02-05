@@ -1,15 +1,13 @@
 #!/bin/bash -
 #=========================================================================
 #
-#          FILE: shao_mount_mark6.sh
+#          FILE: shao_mark6_unmount
 #
-#         USAGE: ./shao_mount_mark6.sh
+#         USAGE: ./shao_mark6_unmount
 #
 #=========================================================================
 
 set -o nounset                                  # Treat unset variables as an error
-
-# get all the disks
 
 # get all the disks
 

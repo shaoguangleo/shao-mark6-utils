@@ -26,11 +26,13 @@ $ git clone https://github.com/shaoguangleo/shao-mark6-utils.git
 $ cd shao-mark6-utils
 $ mkdir build
 $ cd build
-$ cmake .. & make & make install
+$ cmake -DCMAKE_INSTALL_PREFIX=/usr/local/bin/ .. 
+$ make 
+$ make install
 ```
 
 # Version
 
 - M6Utils : 1.0.7
 - d-plane : 1.17
-- scripts : 1.4.2
+- scripts : 1.4.3

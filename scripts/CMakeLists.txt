@@ -4,6 +4,9 @@ install(CODE "MESSAGE (\"Ready to install scripts\")")
 install(PROGRAMS shao_mark6_mount.sh DESTINATION bin)
 execute_process(COMMAND ln -s /usr/local/bin/shao_mark6_mount.sh /usr/local/bin/shao_mark6_mount)
 
+install(PROGRAMS shao_mark6_umount.sh DESTINATION bin)
+execute_process(COMMAND ln -s /usr/local/bin/shao_mark6_umount.sh /usr/local/bin/shao_mark6_umount)
+
 install(PROGRAMS shao_mark6_gather_files.py DESTINATION bin)
 execute_process(COMMAND ln -s /usr/local/bin/shao_mark6_gather_files.py /usr/local/bin/shao_mark6_gather_files)
 
