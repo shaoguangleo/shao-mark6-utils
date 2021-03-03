@@ -4,10 +4,12 @@
 
 import os
 import sys
+from shao_mark6_gather_files import gather_file
+from shao_mark6_dethread_files import dethread_file
 from shao_mark6_version import _version_,_author_
 
 # See shao_mark6_version.py for more details
-_name_ = ' shao_mark6_gather_files '
+_name_ = ' shao_mark6_gather_dethread_files '
 _author_ = _author_
 _version_ = _version_
 
@@ -63,19 +65,6 @@ def get_all_files():
     return files
 
 
-def gather_file(infile, outfile=None):
-    print('Gathering file : ' + infile)
-    if outfile is None:
-        os.system('shao_mark6_gather ' + sys.argv[1]+ '/*/*/data/' + infile + ' -o ' + infile)
-        #print('gather ' + sys.argv[1] + '/*/*/data/' + i + ' -o ' + infile)
-    else:
-        os.system('shao_mark6_gather ' + sys.argv[1]+ '/*/*/data/' + infile + ' -o ' + outfile)
-        #print('gather ' + base_dir + '/*/*/data/' + i + ' -o ' + outfile)
-
-#def choose_files():
-
-#processing_files = [ i for i in files if sys.argv[3] in i ]
-
 if __name__ == "__main__":
     if len(sys.argv) <= 1:
         usage()
@@ -83,12 +72,14 @@ if __name__ == "__main__":
         all_files = get_all_files()
         for i in all_files:
             gather_file(i)
+            dethread_file('./',i)
     if len(sys.argv) == 4:
         filename_prefix = sys.argv[3]
         all_files = get_all_files()
         for i in all_files:
             if filename_prefix in i:
                 gather_file(i)
+                dethread_file('./',i)
     if len(sys.argv) == 5:
         filename_prefix = sys.argv[3]
         output_path = sys.argv[4]
@@ -96,3 +87,10 @@ if __name__ == "__main__":
         for i in all_files:
             if filename_prefix in i:
                 gather_file(i, output_path + '/' + i)
+                dethread_file('./',i)
+
+    
+    print('##########################################################')
+    print('  Now you can move the data using the following command:')
+    print('  $   mv *_?.vdif /the/data/path/you/want/to/save/ ')
+    print('##########################################################')

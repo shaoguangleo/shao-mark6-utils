@@ -15,3 +15,6 @@ execute_process(COMMAND ln -s /usr/local/bin/shao_mark6_dethread_files.py /usr/l
 
 install(PROGRAMS shao_mark6_list_files.py DESTINATION bin)
 execute_process(COMMAND ln -s /usr/local/bin/shao_mark6_list_files.py /usr/local/bin/shao_mark6_list_files)
+
+install(PROGRAMS shao_mark6_gather_dethread_files.py DESTINATION bin)
+execute_process(COMMAND ln -s /usr/local/bin/shao_mark6_gather_dethread_files.py /usr/local/bin/shao_mark6_gather_dethread_files)
