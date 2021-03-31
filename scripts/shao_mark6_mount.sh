@@ -11,7 +11,7 @@ set -o nounset                                  # Treat unset variables as an er
 
 # get all the disks
 
-aa=`lsscsi| grep -v cd | grep -v -w sda| awk '{print $6}' `
+aa=`lsscsi| grep -v cd | grep -v -w sda| awk '{print $NF}' `
 
 echo "There are disks in the following:"
 echo $aa
