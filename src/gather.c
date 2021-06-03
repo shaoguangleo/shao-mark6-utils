@@ -406,7 +406,7 @@ int main(int argc, char **argv)
     elapsed = tv.tv_sec - tv0.tv_sec + 1e-6 * (tv.tv_usec - tv0.tv_usec);
     if (nbadblocks > 0)
         printf("total ignored blocks due to bad block numbers %d\n", nbadblocks);
-    printf("elapsed time %6.2f secs; rate %5.0f MB/s\n",
+    printf("Gather time %6.2f secs; rate %5.0f MB/s\n",
            elapsed, 1e-6 * nobytes / elapsed);
     exit(0);
 }

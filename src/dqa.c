@@ -54,6 +54,10 @@ int main(int argc, char **argv)
         outfile[MAXT][128],
         suffix[128],
         temps[128];
+    
+    struct timeval tv_start, tv_end;
+    struct timezone tz;
+    double elapsed;
 
     FILE *fin,
         *fout[MAXT];
@@ -116,8 +120,12 @@ int main(int argc, char **argv)
         strncpy(infile, argv[1], 128);
     }
 
+    gettimeofday(&tv_start, &tz); // note the start time
+
     printf("opening %s\n", infile);
     fin = fopen(infile, "r");
+    long long int filesize=get_file_size(infile);
+    printf("File size is %lld\n", filesize);
 
     if (fin == NULL)
     {
@@ -380,5 +388,10 @@ int main(int argc, char **argv)
     for (i = 0; i < MAXT; i++)
         if (opened[i])
             fclose(fout[i]);
+    
+    gettimeofday(&tv_end, &tz); // get the ending time
+    elapsed = tv_end.tv_sec - tv_start.tv_sec + 1e-6 * (tv_end.tv_usec - tv_start.tv_usec);
+    printf("De-thread time %6.2f secs; rate %5.0f MB/s\n", elapsed, 1e-6 * filesize/ elapsed);
+
     exit(0);
 }

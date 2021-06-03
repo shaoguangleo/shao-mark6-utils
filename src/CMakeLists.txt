@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(SOURCE_FILES dboss.c dqa.c gather.c dpstat.c dspeed.c scatspeed.c)
+set(SOURCE_FILES dboss.c dqa.c gather.c dpstat.c dspeed.c scatspeed.c get_file_size.c)
 
 include_directories("${PROJECT_BINARY_DIR}/include")
 
@@ -12,7 +12,7 @@ target_link_libraries(shao_mark6_dboss ${CMAKE_THREAD_LIBS_INIT})
 
 add_executable(shao_mark6_dpstat dpstat.c)
 
-add_executable(shao_mark6_dqa dqa.c)
+add_executable(shao_mark6_dqa dqa.c get_file_size.c)
 
 add_executable(shao_mark6_dspeed dspeed.c)
 

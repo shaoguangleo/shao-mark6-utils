@@ -236,3 +236,5 @@ enum file_stati
         printf(__VA_ARGS__); \
         fflush(stdout);      \
     }
+
+unsigned long long int get_file_size(char *filename);
