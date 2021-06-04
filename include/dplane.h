@@ -200,11 +200,15 @@ enum boolean
     TRUE
 };
 
+/**
+ * @brief packet format
+ * 
+ */
 enum packet_formats
 {
-    VDIF,
-    MK5B,
-    UNKNOWN_FORMAT
+    VDIF, ///< VDIF data formats
+    MK5B, ///< Mark5B data formats
+    UNKNOWN_FORMAT ///< Unknown data format
 };
 
 enum states
@@ -224,10 +228,14 @@ enum rb_states
     DRAINING
 };
 
+/**
+ * @brief file status
+ * 
+ */
 enum file_stati
 {
-    READY,
-    BUSY
+    READY, ///< ready for use
+    BUSY   ///< busy for waiting
 };
 // variadic macro for conditional printf
 #define cprintf(v, ...)      \
@@ -236,5 +244,10 @@ enum file_stati
         printf(__VA_ARGS__); \
         fflush(stdout);      \
     }
-
+/**
+ * @brief Get the file size object
+ * 
+ * @param filename 
+ * @return unsigned long long int 
+ */
 unsigned long long int get_file_size(char *filename);

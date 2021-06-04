@@ -1,3 +1,25 @@
+/**
+ * @file gather.c
+ * @author your name (you@domain.com)
+ * @brief a program to reassemble a single file from 
+ * a group of fiels originally create by dplane
+ * @version 0.1
+ * @date 2021-06-04
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ * @section History
+ * <table>
+ * <tr><th> Date <th> Author <th> Description </tr>
+ * <tr><td> 2012.9.14 <td> rjc <td> Initial verison </tr>
+ * <tr><td> 2013.9.14 <td> rjc <td> support for v.2 input format</tr>
+ * <tr><td> 2014.12.19 <td> rjc <td> add -o field to prevent accidents</tr>
+ * <tr><td> 2021.6.4 <td> gsg <td> Adding data rate summarize </tr>
+ * </table>
+ * 
+ */
+
+
 // gather - a program to reassemble a single file from
 // a group of files originally created by dplane
 //
@@ -411,9 +433,16 @@ int main(int argc, char **argv)
     exit(0);
 }
 
-void get_block_size(char *fname,  // pointer to file name (input)
-                    int *bsize,   // pointer to block size (output)
-                    int *version) // pointer to file version (output)
+/**
+ * @brief Get the block size object
+ * 
+ * @param fname 
+ * @param bsize 
+ * @param version 
+ */
+void get_block_size(char *fname,  ///< pointer to file name (input)
+                    int *bsize,   ///< pointer to block size (output)
+                    int *version) ///< pointer to file version (output)
 {
     int rc;
 

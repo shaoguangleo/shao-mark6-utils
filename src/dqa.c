@@ -1,8 +1,22 @@
-// dqa - data quality analyzer for captured vdif packets
-//
-// initial version                  2012.6.16  rjc
-// support version 2 block format   2013.4.24  rjc
-// add de-threading feature         2013.9.27  rjc
+/**
+ * @file dqa.c
+ * @author your name (you@domain.com)
+ * @brief data quality analyzer for captured VDIF packets 
+ * @version 0.1
+ * @date 2021-06-04
+ * 
+ * @copyright Copyright (c) 2021
+ *
+ * @section History
+ * <table>
+ * <tr><th> Date <th> Author <th> Description </tr>
+ * <tr><td> 2012.6.16 <td> rjc <td> Initial verison </tr>
+ * <tr><td> 2013.4.24 <td> rjc <td> support for v.2 input format</tr>
+ * <tr><td> 2013.9.27 <td> rjc <td> add de-threading feature</tr>
+ * <tr><td> 2021.6.4 <td> gsg <td> Adding data rate summarize </tr>
+ * </table>
+ * 
+ */
 
 #include "dplane.h"
 
