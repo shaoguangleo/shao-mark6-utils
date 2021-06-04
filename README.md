@@ -31,6 +31,10 @@ $ make
 $ make install
 ```
 
+## Document
+
+Just type `doxygen Doxyfile`, you will get html and latex document for this repo.
+
 # Version
 
 - M6Utils : 1.0.7

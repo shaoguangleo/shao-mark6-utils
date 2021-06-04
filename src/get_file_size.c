@@ -1,18 +1,17 @@
-/*************************************************************
-Copyright (C),2011-2012,SHAO
+/**
+************************************************************
 
-File name 	: 	get_file_size.c
-Author		:	Guo Shaoguang
-Version		:	201111
-Date		:	2011.11.28
-Description	:	This function will create the client
-Others		:	Nothing
-Function List	:	argument usages
-History		:	
-	<author>	<time>		<version>	<description>
-	Guo Shaoguang	2011.11.28	201111		create the southread_returne code
+@file get_file_size.c
+@author Shaoguang Guo <sgguo@shao.ac.cn>
+@date 2011.11.28
+@version 1.0 
+@brief This file will get file size
+@details details
 
-****************************************************************/
+@copyright Copyright (C),2011-2012
+		SHAO,CAS
+***************************************************************
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>

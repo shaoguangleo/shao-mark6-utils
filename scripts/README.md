@@ -1,12 +1,12 @@
-# 脚本程序
+# Script Programs
 
-- 数据检查 shao_mark6_list_files
-- 数据聚合 shao_mark6_gather_files
-- 数据解帧 shao_mark6_dethread_files
-- 数据删除 shao_mark6_delete_files
-- 数据分析 shao_mark6_analysis_files
+- Data Check :  shao_mark6_list_files
+- Data Gather : shao_mark6_gather_files
+- Data Dethread: shao_mark6_dethread_files
+- Data Delete :  shao_mark6_delete_files
+- Data Analysis:  shao_mark6_analysis_files
 
-## 数据检查
+## Data Check
 
 ```bash
 $ shao_mark6_list_files_v1.4.4
@@ -22,12 +22,12 @@ For example:
 	 shao_mark6_list_files  /mnt/disks/ 1 test : will list the data include test
 ```
 
-## 数据聚合
+## Data Gather
 
 ```bash
 $ shao_mark6_gather_files 1234 data_prefix output_prefix
 
-# 具体可以参考详细介绍，可以聚合一个文件，也可以聚合整个scan，或者整个IDCODE的数据，awesome
+# This script can gather one file/one scan or one IDCODE in one step.
 
 Usage :	 shao_mark6_gather_files  module filename_prefix [output_prefix]
 	 > module          : which module have the data
@@ -41,7 +41,7 @@ For example:
 	 shao_mark6_gather_files  1234 shao6_scan29 SheShan   : will add 'SheShan_' prefix before the fielname
 ```
 
-## 数据解帧
+## Data Dethread
 
 ```bash
 $ shao_mark6_dethread_files.py 
